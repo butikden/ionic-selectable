@@ -28,9 +28,8 @@
   <div *ngIf="selectComponent.headerTemplate"
     [ngTemplateOutlet]="selectComponent.headerTemplate">
   </div>
-  <ion-toolbar
-    *ngIf="selectComponent.canSearch || selectComponent.messageTemplate">
-    <ion-searchbar *ngIf="selectComponent.canSearch" #searchbarComponent
+  <ion-toolbar>
+    <ion-searchbar #searchbarComponent
       [(ngModel)]="selectComponent._searchText"
       (ionInput)="selectComponent._filterItems()"
       [placeholder]="selectComponent.searchPlaceholder"
@@ -48,6 +47,17 @@
     <div class="ionic-selectable-spinner-background"></div>
     <ion-spinner></ion-spinner>
   </div>
+
+  <button ion-item detail-none
+          *ngIf="selectComponent._searchText"
+          (click)="selectComponent._select(selectComponent._searchText)"
+          class="ionic-selectable-item searchTextItem"
+          [ngClass]="{ 'ionic-selectable-item-is-selected': selectComponent._isItemSelected(selectComponent._searchText) }">
+        <span *ngIf="!selectComponent.itemTemplate">
+          Use typed text
+        </span>
+    <ion-icon class="addCustomItemIcon" name="add-circle"></ion-icon>
+  </button>
   <ion-list no-margin
     *ngIf="!selectComponent.hasVirtualScroll && selectComponent._hasFilteredItems">
     <ion-item-group *ngFor="let group of selectComponent._filteredGroups"

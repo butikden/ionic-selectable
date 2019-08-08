@@ -39,7 +39,7 @@ export class IonicSelectableModalComponent implements AfterViewInit {
   _content: Content;
   selectComponent: IonicSelectableComponent;
   _header: HTMLElement;
-
+  
   constructor(
     private navParams: NavParams,
     public _element: ElementRef,
@@ -64,12 +64,11 @@ export class IonicSelectableModalComponent implements AfterViewInit {
   ngAfterViewInit() {
     this._header = this._element.nativeElement.querySelector('ion-header');
     if (this._searchbarComponent && this.selectComponent.focusSearchbar) {
-      console.warn('here1');
       // Focus after a delay because focus doesn't work without it.
       setTimeout(() => {
         this._searchbarComponent.setFocus();
-        console.warn('here2');
-      }, 1000);
+      }, 500);
     }
   }
+
 }

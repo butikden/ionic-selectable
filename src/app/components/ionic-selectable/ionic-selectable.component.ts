@@ -1536,7 +1536,7 @@ export class IonicSelectableComponent implements ControlValueAccessor, OnInit, O
         IonicSelectableModalComponent, {
           selectComponent: self
         }, modalOptions);
-      self._modal.present().then(() => {
+      self._modal.present({animate: false}).then(() => {
         // Set focus after Modal has opened to avoid flickering of focus highlighting
         // before Modal opening.
         self._setIonItemHasFocus(true);
