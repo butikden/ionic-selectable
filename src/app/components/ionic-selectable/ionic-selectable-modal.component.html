@@ -54,9 +54,9 @@
           class="ionic-selectable-item searchTextItem"
           [ngClass]="{ 'ionic-selectable-item-is-selected': selectComponent._isItemSelected(selectComponent._searchText) }">
         <span *ngIf="!selectComponent.itemTemplate">
-          Use typed text
+          Add new symptom
         </span>
-    <ion-icon class="addCustomItemIcon" name="add-circle"></ion-icon>
+    <ion-icon class="addCustomItemIcon" name="md-add"></ion-icon>
   </button>
   <ion-list no-margin
     *ngIf="!selectComponent.hasVirtualScroll && selectComponent._hasFilteredItems">
