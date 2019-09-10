@@ -1,5 +1,5 @@
 {
-  "version": "3.4.22",
+  "version": "3.4.27",
   "name": "ionic-selectable-v3",
   "title": "Ionic Selectable",
   "description": "An Ionic component similar to Ionic Select, that allows to search items, including async search, group, add, edit, delete items, and much more.",
